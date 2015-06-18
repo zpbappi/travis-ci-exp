@@ -1,0 +1,11 @@
+language: ruby
+rvm:
+ - "2.2.2"
+install:
+ - gem install github-pages
+ - gem install jekyll-assets
+script:
+ - jekyll build
+ - git add *
+ - git commit -m "[ci skip] built with travis ci"
+ - git push origin master
