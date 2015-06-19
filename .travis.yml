@@ -4,8 +4,12 @@ rvm:
 install:
  - gem install github-pages
  - gem install jekyll-assets
+ - gem install travis
 script:
  - jekyll build
- - git add *
+ - travis login --github-token "$GH_TOKEN"
+ - git config user.name "$GIT_NAME"
+ - git config user.email "$GIT_EMAIL"
+ - git add --all
  - git commit -m "[ci skip] built with travis ci"
  - git push origin master
