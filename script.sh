@@ -1,6 +1,7 @@
 #!/bin/bash
 
 jekyll build
+rm -rf _site/script.sh
 git remote set-url --push origin $GH_REPO
 git config user.name $GIT_NAME
 git config user.email $GIT_EMAIL
