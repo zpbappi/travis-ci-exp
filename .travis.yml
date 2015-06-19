@@ -9,7 +9,7 @@ script:
 - git config credential.helper "store --file=.git/credentials"
 - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 - git add -A
-- git commit -m "[ci skip] Travis Build \# ${TRAVIS_BUILD_NUMBER}"
+- git commit -m "[ci skip] Travis Build - $TRAVIS_BUILD_NUMBER"
 - git push --force --quiet origin HEAD:master > /dev/null 2>&1
 - rm -r .git/credentials
 
