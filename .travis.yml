@@ -10,15 +10,11 @@ script:
 - git config user.email $GIT_EMAIL
 - git config credential.helper "store --file=.git/credentials"
 - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+- git add _site/*
 - git add *
-- git commit -m "[ci skip] built with travis ci"
-- git fetch -q
 - git status
-- git branch
-- git branch -r
-- git branch -l
-- git remote -v
-- git push origin origin/master
+- git commit -m "[ci skip] built with travis ci"
+- git push origin HEAD:master
 - rm -r .git/credentials
 env:
   global:
