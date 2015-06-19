@@ -5,14 +5,14 @@ install:
 - gem install github-pages
 script:
 - jekyll build
-- pwd
 - git remote set-url --push origin https://github.com/zpbappi/travis-ci-exp.git
 - git config user.name $GIT_NAME
 - git config user.email $GIT_EMAIL
 - git config credential.helper "store --file=.git/credentials"
 - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
-- git add --all
+- git add *
 - git commit -m "[ci skip] built with travis ci"
+- git fetch -q
 - git push origin master
 - rm -r .git/credentials
 env:
