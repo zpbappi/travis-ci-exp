@@ -3,17 +3,16 @@ rvm:
 - 2.2.2
 install:
 - gem install github-pages
-- gem install travis
 script:
 - jekyll build
-- echo $GIT_NAME
-- echo $GH_TOKEN
-- travis login --github-token $GH_TOKEN
 - git config user.name $GIT_NAME
 - git config user.email $GIT_EMAIL
+- git config credential.helper "store --file=.git/credentials"
+- wget "https://$GH_TOKEN:@github.com" > ./git/credentials
 - git add --all
 - git commit -m "[ci skip] built with travis ci"
 - git push origin master
+- rm -r .git/credentials
 env:
   global:
     secure: PzC96ZzfV1o2JftmVqL2E6I2wzquM2MFYOuHtnGqKxKxor2AytugkyieT3zupE+UMicMB8oGjrtBnQ8/a485Ia9aX4/a5hzlVouIAfl/RVZjvuqve3P1tJ8WEDOZR29UQGU3+MOEFcOA87wMHRcVllRXIT5fjzzejPQaK5lzCNK1K24hsiSBYXmcIQXplC3hwUleIXYw1kabxGVOvXm6F55ORDbk3OoE+spVmOvjj0hpL12o1mQt3oJgO/alTRaHwg3B/fIPzFNHjPlXZ4f59BW56qnhetRRgRt+POv947QWwLtKID2Q8SDmaGvJ2KPOCHHiNtc3+WwpQq4ZLlZvn52dFdYEYeLiRc9sY4GHFdgCLb+rpg/VvlsETi3QLSDzbUFcfTtBdyx+/sCVkcQ80N69kILxfZEY7c0MjB+6nI7fx0eGed2LON+qxoyWASUmHEnv135W4w8nOu8+X/emfIKl/fDNsza4Q7EsqElhQ1XuFCU2Yu1W6mszH8rbEoaCDSRb4tRylnB/Hyk4D+lN1KV6a0GM8VbhPR+yO+DD5RYu1s+lNjhibowbi0/06w5Xsc2LqnSCzgHlQUcTEWR8GNxuiTjKDwbX0cz5KMETZdgkq3khgOZ23+pgw3PVrxpH6acum5vWVFBWNqGMS1qsdFuOmkEC2eKcE2HiG2E/+cs=
