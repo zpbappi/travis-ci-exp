@@ -10,7 +10,7 @@ script:
 - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 - git add -A
 - echo "[ci skip] Travis Build - ${TRAVIS_BUILD_NUMBER}" > commit.txt
-- git commit --file commit.txt
+- git commit --file ./commit.txt
 - git push --force --quiet origin HEAD:master > /dev/null 2>&1
 - rm -r commit.txt
 - rm -r .git/credentials
