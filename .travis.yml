@@ -3,7 +3,7 @@ install:
 - gem install jekyll
 script:
 - jekyll build
-- git add -A
+- git add _site/*
 - git remote set-url --push origin $GH_REPO
 - git config user.name $GIT_NAME
 - git config user.email $GIT_EMAIL
