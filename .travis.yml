@@ -2,9 +2,9 @@ language: ruby
 rvm:
 - 2.2.2
 install:
-#- gem install github-pages
+- gem install jekyll
 script:
-#- jekyll build
+- jekyll build
 - git remote set-url --push origin https://github.com/zpbappi/travis-ci-exp.git
 - git config user.name $GIT_NAME
 - git config user.email $GIT_EMAIL
