@@ -1,6 +1,7 @@
 language: ruby
 install:
 - gem install jekyll
+- chmod ugo+x ./script.sh
 script:
 - ./script.sh
 
