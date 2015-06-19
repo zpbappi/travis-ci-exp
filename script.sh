@@ -8,11 +8,10 @@ git config user.email $GIT_EMAIL
 git config credential.helper "store --file=.git/credentials"
 echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 git add --all _site/*
-git commit -m "[ci skip] Travis Build - ${TRAVIS_BUILD_NUMBER}"
-if [ "$?" = "0" ]; then
-	git push origin HEAD:master
-else
-	echo "Nothing to commit"
+git commit -m "[ci skip] Travis Build - ${TRAVIS_BUILD_NUMBER}" > /dev/null 2>&1
+if [ "$?" != "0" ]; then
+	echo ">>> Nothing changed inside _site/ to commit"
+	exit 0
 fi
+git push --force --quiet origin HEAD:master > /dev/null 2>&1
 rm -r .git/credentials
-exit 0
