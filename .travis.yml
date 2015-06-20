@@ -17,3 +17,6 @@ deploy:
   file: _site/README.html
   on:
     repo: zpbappi/travis-ci-exp
+    tags: true
+    all_branches: true
+
