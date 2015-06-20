@@ -11,3 +11,12 @@ branches:
 env:
   global:
     - GH_REPO: https://github.com/zpbappi/travis-ci-exp.git
+
+deploy:
+  provider: releases
+  api-key: $GH_KEY
+  file:
+    - _site/README.html
+  skip_cleanup: true
+  on:
+    tags: true
