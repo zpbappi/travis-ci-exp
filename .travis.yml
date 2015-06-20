@@ -18,5 +18,5 @@ deploy:
   on:
     repo: zpbappi/travis-ci-exp
     tags: true
-    all_branches: true 
+    branch: master
 
