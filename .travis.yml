@@ -3,6 +3,8 @@ install:
 - gem install jekyll
 - chmod ugo+x ./script.sh
 script:
+- echo $TRAVIS_BRANCH
+- echo $TRAVIS_TAG
 - "./script.sh"
 branches:
   only:
