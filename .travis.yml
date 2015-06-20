@@ -6,9 +6,7 @@ script:
 - echo $TRAVIS_BRANCH
 - echo $TRAVIS_TAG
 - "./script.sh"
-branches:
-  only:
-  - master
+
 env:
   global:
   - GH_REPO: https://github.com/zpbappi/travis-ci-exp.git
