@@ -1,4 +1,7 @@
 language: ruby
+branches:
+  except:
+    - dev
 install:
 - gem install jekyll
 - chmod ugo+x ./script.sh
