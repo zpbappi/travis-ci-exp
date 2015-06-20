@@ -19,4 +19,4 @@ deploy:
     - _site/README.html
   skip_cleanup: true
   on:
-    tags: true
+    all_branches: true
