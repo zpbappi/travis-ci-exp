@@ -1,22 +1,19 @@
-language: ruby 
+language: ruby
 install:
 - gem install jekyll
 - chmod ugo+x ./script.sh
 script:
-- ./script.sh
-
+- "./script.sh"
 branches:
   only:
-    - master
+  - master
 env:
   global:
-    - GH_REPO: https://github.com/zpbappi/travis-ci-exp.git
-
+  - GH_REPO: https://github.com/zpbappi/travis-ci-exp.git
 deploy:
   provider: releases
-  api-key: $GH_KEY
-  file:
-    - _site/README.html
-  skip_cleanup: true
+  api_key:
+    secure: KLE5r6Mj0Qc439kkRI3ZBVrE1O4JJWJnWlrOSTmYLS/do1PVgmtpfob9Hpj+Ozfuu48XHcDm/TrYSkbdrJXezIkEnYKvlhIgbRMSPtOKOo1xNSBjZI8h2xJGHNmnICspUedbytgNr2G7/OK9eDoyFjvdZYuMtt/erOx6cdoSqp6DgsNUHk1oVOmRjgCjG0qCg/ZcfWdHY0xQtmwerUnTcFBUG+IcZ85+4HFu3Q49loKNtK4ZMcwjWAB4P/CgeuxtYefa2j9fCajRjM8OeLPvsnoGh+j0fPngFtSZXWG0wHHOtr0eqwovF7K8fWLI/oFT/tOEKelKueXIW8EhyQ2GFF3qMzp9CxRMapNClgbUqbv/MOepfNplE1VMJwCf1WGitDmWXGYyZ9A0GU67d5D9jbWN0HijIsRf1Lk3OvrfZQGKiUOqhlIYfqOJXXNp5Pg/gtdvsSzP9VVC3JlFaCMy1v/kLKIL/esN37rmWQQ0ZDJDO0pKRo2STD/jQ+aeXFPt0ydIv9HdRgTcYEpXEHMjgtCaNXO9fNmGmBLbFTjex7YBJc0nnY0iMFnlL58sJjW1yOUvn4UkPv5JObS3MhUCR+/XxLy7qyjYuv0vobgxgMZIdRXnReqIeYhPUnZurCHtXqpdKrshb5n6jrQl+xBc034hhBLb8Oy0WGAJbtOW8uo=
+  file: _site/README.html
   on:
-    all_branches: true
+    repo: zpbappi/travis-ci-exp
