@@ -1,0 +1,15 @@
+{
+	"name": "zp-travis-ci-test",
+	"version": "x.x.x",
+	"description": "test repo",
+	"license": "MIT",
+	"author": "Zp Bappi <zpbappi@gmail.com> (http://zpbappi.com)",
+	"main": "README.html",
+	"repository": { 
+		"type": "git",
+		"url": "https://github.com/zpbappi/travis-ci-exp"
+	},
+	"dependencies": {
+		"angular": "1.3.x"
+	}
+}

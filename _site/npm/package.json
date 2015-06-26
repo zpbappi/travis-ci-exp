@@ -1,9 +1,0 @@
-{
-	"name": "zp-travis-ci-test",
-	"version": "0.1.1",
-	"description": "test repo",
-	"repository": {
-    	"type": "git",
-    	"url": "https://github.com/zpbappi/travis-ci-exp.git"
-  	}
-}
