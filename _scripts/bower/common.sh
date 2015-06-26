@@ -6,7 +6,7 @@
 # bower_publish version src_repo_slug
 bower_publish(){
   echo "[INFO] Publishing version $1 to bower repo $2-bower"
-  version=$1
+  version=$1 
   src_repo_slug=$2
   gh_bower_repo_url=$(github_url_from_slug "$src_repo_slug-bower")
   
