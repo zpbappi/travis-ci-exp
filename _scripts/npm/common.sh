@@ -3,6 +3,8 @@
 . _scripts/utility.sh
 
 publish_npm(){
+  echo "[INFO] Publishing npm package version: $1"
+
   saved_dir=$(pwd)
   tmp_dir=/tmp/npm-release
 
