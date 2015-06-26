@@ -3,7 +3,7 @@
 . _scripts/utility.sh
 
 publish_targets=(
-  "npm",
+  "npm"
   "bower"
 )
 

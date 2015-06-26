@@ -34,8 +34,8 @@ git_commit_n_push(){
     branch="$2"
   fi
   
-  git commit -m "$1"
+  git commit -q -m "$1" > /dev/null 2>&1
   if [ "$?" == "0" ]; then
-    git push --force origin HEAD:$branch
+    git push --force --quiet origin HEAD:$branch > /dev/null 2>&1
   fi
 }
