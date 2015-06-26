@@ -23,6 +23,8 @@ bower_publish(){
   cd $tmp_dir
   git add -A
   git_commit_n_push "[automated publishing] version $version" "master"
+  git tag $version
+  git push --tags > /dev/null 2>&1
   
   cd $cwd
   rm -rf $tmp_dir
