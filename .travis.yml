@@ -16,5 +16,6 @@ env:
   - GH_REPO: https://github.com/zpbappi/travis-ci-exp.git
 
 after_success:
+- npm install ci-npm-publish
 - _scripts/release.sh
 
