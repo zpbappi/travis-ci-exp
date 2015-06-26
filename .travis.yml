@@ -4,8 +4,8 @@ branches:
     - dev
 install:
 - gem install jekyll
-- chmod ugo+x _scripts/utility.sh
-- chmod ugo+x _scripts/build.sh
+- chmod ugo+x _scripts/*.sh
+- chmod ugo+x _scripts/*/*.sh
 script:
 - jekyll build
 
@@ -14,5 +14,5 @@ env:
   - GH_REPO: https://github.com/zpbappi/travis-ci-exp.git
 
 after_success:
-- _scripts/build.sh
+- _scripts/release.sh
 
