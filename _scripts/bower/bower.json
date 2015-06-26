@@ -1,0 +1,25 @@
+{
+	"name": "travis-ci-exp",
+	"description": "test repo to experiment with automated publishing",
+	"license": "MIT",
+	"version": "ig.nor.ed",
+	"authors": [
+		{ "name": "Zp Bappi", "email": "zpbappi@gmail.com", "homepage": "http://zpbappi.com" }
+	],
+	"homepage": "http://travis-ci-exp.github.io",
+	"repository": {
+	  "type": "git",
+	  "url": "git://github.com/zpbappi/travis-ci-exp-bower.git"
+	},
+	"dependencies": {
+		"angular": "1.3.x"
+	},
+	"keywords": [
+		"test"
+	],
+	"private": false,
+	"main": [
+		"README.html"
+	],
+	"ignore": []
+}

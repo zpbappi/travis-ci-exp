@@ -3,7 +3,8 @@
 . _scripts/utility.sh
 
 publish_targets=(
-  "npm"
+  "npm",
+  "bower"
 )
 
 ret=$( is_branch_release $TRAVIS_BRANCH )
