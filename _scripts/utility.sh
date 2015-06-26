@@ -27,7 +27,7 @@ is_branch_release(){
 }
 
 get_version_from_branch_name(){
-  version=`echo $1| cut -d'_' -f 2`
+  version=`echo $1| cut -d'-' -f 2,3,4`
   echo $version
 }
 
