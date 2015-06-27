@@ -2,8 +2,13 @@
 
 . _scripts/utility.sh
 
+#publish_npm $version $npm_user $npm_password
 publish_npm(){
-  echo "[INFO] Publishing npm package version: $1"
+  version="$1"
+  npm_user="$2"
+  npm_password="$3"
+  
+  echo "[INFO] Publishing npm package version: $version"
 
   saved_dir=$(pwd)
   tmp_dir=/tmp/npm-release
@@ -17,9 +22,9 @@ publish_npm(){
   mkdir $tmp_dir
   cp _site/* $tmp_dir/
   cp _scripts/npm/package.json $tmp_dir/
-  replaceJsonProp "$tmp_dir/package.json" "version" ".*" "$1"
+  replaceJsonProp "$tmp_dir/package.json" "version" ".*" "$version"
   cd $tmp_dir
-  npm-publish --npmuser "$NPM_USER" --npmemail "$GIT_EMAIL" --npmpassword "$NPM_PASSWORD"
+  npm-publish --npmuser "$npm_user" --npmemail "$GIT_EMAIL" --npmpassword "$npm_password"
   cd $saved_dir
   rm -rf $tmp_dir
   

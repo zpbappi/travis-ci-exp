@@ -3,7 +3,7 @@
 . _scripts/utility.sh
 . _scripts/github.sh
 
-# bower_publish version src_repo_slug
+# bower_publish $version $src_repo_slug
 bower_publish(){
   echo "[INFO] Publishing version $1 to bower repo $2-bower"
   version=$1 
