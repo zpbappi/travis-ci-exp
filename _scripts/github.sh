@@ -58,7 +58,7 @@ gh_release(){
     is_prerelease="true"
   fi
   
-  data='{"tag_name":"'$tag'","prerelease":'$prerelease',"body":"'$description'"}'
+  data='{"tag_name":"'$tag'","prerelease":'$is_prerelease',"body":"'$description'"}'
   
-  curl -i -H "Authorization: token $gh_token" -d "$data" $gh_release_endpoint
+  curl -i -H "Authorization: token $gh_token" -d "$data" $gh_release_endpoint > /dev/null 2>&1
 }
