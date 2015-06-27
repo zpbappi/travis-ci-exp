@@ -1,9 +1,10 @@
 #!/bin/bash
 
-is_tag_release(){
-  tag="$1"
+# decides whether it is proper semver that i allow for tagging
+is_proper_version(){
+  version="$1"
 
-  if [[ "$tag" =~ ^[1-9][0-9]*\.[0-9]+\.[0-9]+(\-(alpha|beta|rc)(\.[1-9][0-9]*)?)?$ ]]
+  if [[ "$version" =~ ^[1-9][0-9]*\.[0-9]+\.[0-9]+(\-(alpha|beta|rc)(\.[1-9][0-9]*)?)?$ ]]
   then
     echo 0
     return 0
@@ -13,22 +14,30 @@ is_tag_release(){
   return 1
 }
 
-is_branch_release(){
-  branch="$1"
+is_major_version(){
+  version="$1"
   
-  if [[ "$branch" =~ ^[Rr]elease-[1-9][0-9]*\.[0-9]+\.[0-9]+$ ]]
+  if [[ "$version" =~ ^[1-9][0-9]*\.0\.0$ ]]
   then
     echo 0
     return 0
   fi
-  
+
   echo 1
   return 1
 }
 
-get_version_from_branch_name(){
-  version=`echo $1| cut -d'-' -f 2,3,4`
-  echo $version
+is_prerelease_version(){
+  version="$1"
+
+  if [[ "$version" =~ ^[1-9][0-9]*\.[0-9]+\.[0-9]+\-(alpha|beta|rc)(\.[1-9][0-9]*)?$ ]]
+  then
+    echo 0
+    return 0
+  fi
+
+  echo 1
+  return 1
 }
 
 # copied from https://github.com/angular/angular.js/blob/master/scripts/utils.inc

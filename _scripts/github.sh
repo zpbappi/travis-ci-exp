@@ -26,6 +26,24 @@ github_auth(){
   cd $cwd
 }
 
+# gh_branch_exists $gh_token $repo_slug $branch_name
+gh_branch_exists(){
+  gh_token="$1"
+  repo_slug="$2"
+  branch_name="$3"
+  
+  status=$(curl -H "Authorization: token $gh_token" -s -o //null -w "%{http_code}" https://api.github.com/repos/$repo_slug/branches/$branch_name)
+  
+  if [[ "$status" == "200" ]]
+  then
+    echo 0
+    return 0
+  fi
+  
+  echo 1
+  return 1
+}
+
 # git_commit_n_push $message $branch
 git_commit_n_push(){
   branch="master"
