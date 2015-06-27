@@ -9,7 +9,7 @@ publish_targets=(
   "github-releases"
 )
 
-$VERSION="$TRAVIS_TAG"
+VERSION="$TRAVIS_TAG"
 
 ret=$( is_proper_version $VERSION )
 if [[ 0 == $ret ]]
