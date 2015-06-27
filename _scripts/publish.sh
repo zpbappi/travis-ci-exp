@@ -35,7 +35,7 @@ then # it is a proper semver TAG
   for pub in "${publish_targets[@]}"
   do
     
-    _scripts/$pub/$pub_script.sh
+    _scripts/$pub/$pub_script.sh "$VERSION"
   done
   
   echo "[INFO] Completed publishing $pub_script with version $VERSION"

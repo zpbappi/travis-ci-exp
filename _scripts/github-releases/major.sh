@@ -3,6 +3,7 @@
 . _scripts/utility.sh
 . _scripts/github.sh
 
-echo "[INFO] Creating GitHub release for version $VERSION"
+version="$1"
+echo "[INFO] Creating GitHub release for version $version"
 
-gh_release "$GH_TOKEN" "$VERSION"
+gh_release "$GH_TOKEN" "$version"

@@ -2,4 +2,4 @@
 
 . _scripts/bower/common.sh
 
-bower_publish $VERSION $TRAVIS_REPO_SLUG
+bower_publish "$1" "$TRAVIS_REPO_SLUG"
