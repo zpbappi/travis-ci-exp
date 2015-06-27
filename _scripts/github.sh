@@ -60,5 +60,5 @@ gh_release(){
   
   data='{"tag_name":"'$tag'","prerelease":'$prerelease',"body":"'$description'"}'
   
-  curl -i -H "Authorization: token $gh_token" -d "$data" $gh_release_endpoint > /dev/null 2>&1
+  curl -i -H "Authorization: token $gh_token" -d "$data" $gh_release_endpoint
 }
