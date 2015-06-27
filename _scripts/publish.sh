@@ -42,8 +42,8 @@ then # it is a proper semver TAG
   exit 0
 fi
 
-echo "[INFO] No publishing step needed as I wasn't instructed to publish by tag. I configured to publish on tags only."
+echo "[INFO] No publishing step needed as it wasn't tagged with semver to publish. I configured to publish on tags only."
 echo "TAG: $TRAVIS_TAG"
-echo "[INFO] Exiting deployment step normally..."
+echo "[INFO] Nevermind. Exiting deployment step normally. Don't worry about it."
 
 exit 0
