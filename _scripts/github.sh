@@ -39,3 +39,26 @@ git_commit_n_push(){
     git push --force --quiet origin HEAD:$branch > /dev/null 2>&1
   fi
 }
+
+# gh_release $gh_token $tag $description? $is_prerelease?[true|false]
+gh_release(){
+  gh_token="$1"
+  tag="$2"
+  description="$3"
+  is_prerelease="false"
+  gh_release_endpoint=https://api.github.com/repos/zpbappi/travis-ci-exp/releases
+  
+  if [[ -z "$description" ]]
+  then
+    description="Automatically released version $tag using API. Details to follow soon."
+  fi
+  
+  if [[ "$4" == "true" ]]
+  then
+    is_prerelease="true"
+  fi
+  
+  data='{"tag_name":"'$tag'","prerelease":'$prerelease',"body":"'$description'"}'
+  
+  curl -i -H "Authorization: token $gh_token" -d "$data" $gh_release_endpoint > /dev/null 2>&1
+}

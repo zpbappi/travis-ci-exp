@@ -1,7 +1,7 @@
 #!/bin/bash
 
 . _scripts/utility.sh
-. _scripts/git-helper.sh
+. _scripts/github.sh
 
 # bower_publish version src_repo_slug
 bower_publish(){

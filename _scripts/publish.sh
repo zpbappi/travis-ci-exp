@@ -5,6 +5,7 @@
 publish_targets=(
   "npm"
   "bower"
+  "github-releases"
 )
 
 ret=$( is_branch_release $TRAVIS_BRANCH )
