@@ -4,10 +4,7 @@
 	"description": "test repo",
 	"license": "MIT",
 	"author": "Zp Bappi <zpbappi@gmail.com> (http://zpbappi.com)",
-	"files": [
-		"README.html",
-		"utility.sh"
-	],
+	
 	"main": "README.html",
 	"repository": { 
 		"type": "git",
